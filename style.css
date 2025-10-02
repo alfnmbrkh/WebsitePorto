@@ -1,0 +1,193 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background: #4caf50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffe082;
+}
+
+section {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  color: #4caf50;
+  border-bottom: 2px solid #4caf50;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.biodata {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.biodata img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 30px;
+  border: 3px solid #4caf50;
+}
+
+.biodata ul {
+  list-style: none;
+  padding: 0;
+}
+
+.biodata li {
+  margin-bottom: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background: #4caf50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input,
+textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 100%;
+}
+
+button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #4caf50;
+  color: white;
+  margin-top: 50px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#formResponse {
+  margin-top: 10px;
+  font-weight: bold;
+  color: green;
+}
+
+/* Dark mode */
+.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+
+.dark-mode header {
+  background: #222;
+}
+
+.dark-mode table th {
+  background: #333;
+}
+
+/* Tombol dark mode & jam */
+.header-tools {
+  margin: 10px 0;
+}
+
+#darkModeBtn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: white;
+  color: #4caf50;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#darkModeBtn:hover {
+  background: #ddd;
+}
+
+#clock {
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+/* Animasi fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Highlight menu aktif */
+nav a.active {
+  color: rgb(152, 181, 224);
+}
