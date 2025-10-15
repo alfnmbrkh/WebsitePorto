@@ -1,95 +1,1005 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Website</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Web Portofolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "sans-serif"] },
+            colors: {
+              "electric-blue": "#00BFFF",
+              "cyan-glow": "#00FFFF",
+              "purple-glow": "#8B5CF6",
+              "pink-glow": "#EC4899",
+              "green-glow": "#10B981",
+              "orange-glow": "#F59E0B",
+              "dark-bg": "#0F0F23",
+              "dark-card": "#1A1A2E",
+              "light-bg": "#F1F5F9",
+              "light-card": "#FEFEFE",
+            },
+          },
+        },
+      };
+    </script>
     <link rel="stylesheet" href="style.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.emailjs.com/dist/email.min.js"
+    ></script>
   </head>
-  <body>
-    <header>
-      <h1>My Personal Website</h1>
-      <div class="header-tools">
-        <button id="darkModeBtn">🌙 Dark Mode</button>
-        <span id="clock"></span>
+  <body
+    class="bg-slate-50 dark:bg-dark-bg text-gray-700 dark:text-gray-200 font-sans transition-colors duration-300"
+  >
+    <header
+      class="fixed top-0 left-0 right-0 z-50 glass-light dark:glass transition-all duration-300"
+    >
+      <div
+        class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center"
+      >
+        <a href="#" class="text-xl sm:text-2xl font-bold text-electric-blue">
+          <span class="gradient-bg bg-clip-text text-transparent">Alfin</span>
+          <span class="text-electric-blue">Mubarkah Tanjung</span>
+        </a>
+        <nav class="hidden md:flex space-x-6 lg:space-x-8">
+          <a href="#home" class="nav-link hover:text-electric-blue">Home</a>
+          <a href="#about" class="nav-link hover:text-electric-blue">About</a>
+          <a href="#Schedule" class="nav-link hover:text-electric-blue"
+            >Schedule</a
+          >
+          <a href="#intro" class="nav-link hover:text-electric-blue">HTML, CSS, JS, Tailwind?</a>
+          <a href="#tutorial" class="nav-link hover:text-electric-blue">Tutorial</a>
+          <a href="#p&k" class="nav-link hover:text-electric-blue">Pesan & Kesan</a>
+          <a href="#contact" class="nav-link hover:text-electric-blue"
+            >Contact</a
+          >
+        </nav>
+        <button
+          id="theme-toggle"
+          class="p-2 sm:p-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 dark:from-blue-500 dark:to-purple-600 hover:shadow-glow transition-all duration-300 transform hover:scale-110"
+        >
+          <i class="fas fa-sun text-white dark:hidden text-sm sm:text-base"></i>
+          <i
+            class="fas fa-moon text-white hidden dark:block text-sm sm:text-base"
+          ></i>
+        </button>
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-gray-800 dark:text-gray-200 ml-2"
+        >
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
       </div>
-
-      <nav>
-        <a href="#biodata">Biodata</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden mt-4 pb-4 space-y-2 text-center"
+      >
+        <a href="#home" class="block py-2 hover:text-electric-blue">Home</a>
+        <a href="#about" class="block py-2 hover:text-electric-blue">About</a>
+        <a href="#Schedule" class="block py-2 hover:text-electric-blue"
+          >Schedule</a
+        >
+        <a href="#intro" class="block py-2 hover:text-electric-blue">HTML, CSS, JS, Tailwind?</a>
+        <a href="#tutorial" class="block py-2 hover:text-electric-blue">Tutorial</a>
+        <a href="#p&k" class="block py-2 hover:text-electric-blue">Pesan & Kesan</a>
+        <a href="#contact" class="block py-2 hover:text-electric-blue"
+          >Contact</a
+        >
+      </div>
     </header>
 
-    <section id="biodata" class="fade-in">
-      <h2>Biodata</h2>
-      <div class="biodata">
-        <img src="foto.jpg" alt="Foto Diri" />
-        <ul>
-          <li><b>Nama:</b> Alfin Mubarkah Tanjung</li>
-          <li><b>NIM:</b> 241401013</li>
-          <li>
-            <b>Motto:</b> Kegagalan hanyalah batu loncatan menuju kesuksesan
-          </li>
-          <li><b>Hobi:</b> Coding, Membaca, Olahraga</li>
-          <li><b>Email:</b> alfinmubarkah@gmail.com</li>
-          <li>
-            <b
-              >Saya bisa dipanggil Alfin/Kibo/Kiting, saya mahasiswa S1 Ilmu
-              Komputer di Universitas Sumatera Utara</b
+    <main>
+      <section
+        id="home"
+        class="min-h-screen flex items-center justify-center relative overflow-hidden"
+      >
+        <div class="absolute inset-0 gradient-bg opacity-20"></div>
+        <div class="absolute inset-0">
+          <div
+            class="absolute top-1/4 left-1/4 w-32 h-32 bg-electric-blue rounded-full filter blur-3xl opacity-30 animate-float"
+          ></div>
+          <div
+            class="absolute bottom-1/3 right-1/4 w-40 h-40 bg-purple-glow rounded-full filter blur-3xl opacity-20 animate-float"
+            style="animation-delay: 1s"
+          ></div>
+          <div
+            class="absolute top-1/2 left-1/2 w-24 h-24 bg-pink-glow rounded-full filter blur-3xl opacity-25 animate-float"
+            style="animation-delay: 2s"
+          ></div>
+        </div>
+        <div class="container mx-auto px-4 sm:px-6 z-10 text-center">
+          <p
+            class="text-lg sm:text-xl md:text-2xl font-light mb-4 text-gray-400 animate-slide-in"
+          >
+            Hello, I'm
+          </p>
+          <h1
+            class="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 text-white animate-scale-in"
+          >
+            <span class="typing-container">
+              <span
+                class="typing-text gradient-bg bg-clip-text text-transparent"
+                id="dev-name"
+                >Alfin Mubarkah Tanjung</span
+              >
+            </span>
+          </h1>
+          <h2
+            class="text-xl sm:text-2xl md:text-3xl font-light mb-8 text-electric-blue animate-slide-up"
+          >
+            <span class="typing-container" style="animation-delay: 3.5s">
+              <span class="typing-text" id="dev-title"></span>
+            </span>
+          </h2>
+          <div
+            class="flex flex-col sm:flex-row justify-center gap-4 mt-8 animate-slide-up"
+          >
+            <a
+              href="#Schedule"
+              class="px-6 sm:px-8 py-3 rounded-full bg-gradient-to-r from-electric-blue to-purple-glow text-white font-medium hover:shadow-glow-strong transform hover:scale-105 transition-all duration-300"
+              >View My Schedule</a
             >
-          </li>
-        </ul>
-      </div>
-    </section>
+            <a
+              href="#contact"
+              class="px-6 sm:px-8 py-3 rounded-full bg-transparent border-2 border-electric-blue text-electric-blue font-medium hover:bg-electric-blue hover:text-white hover:shadow-glow transform hover:scale-105 transition-all duration-300"
+              >Contact Me</a
+            >
+          </div>
+        </div>
+        <div
+          class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-slow"
+        >
+          <a
+            href="#about"
+            class="text-white opacity-70 hover:opacity-100 transition-opacity"
+          >
+            <i class="fas fa-chevron-down text-2xl"></i>
+          </a>
+        </div>
+      </section>
 
-    <section id="schedule" class="fade-in">
-      <h2>Schedule</h2>
-      <table>
-        <tr>
-          <th>Senin</th>
-          <th>Selasa</th>
-          <th>Rabu</th>
-          <th>Kamis</th>
-          <th>Jumat</th>
-        </tr>
-        <tr>
-          <td>Desain Interaksi (10:30 - 12:10)</td>
-          <td>IELTS Preparation (10:30 - 12:10)</td>
-          <td>Pemrograman Web (08:00 - 10:30)</td>
-          <td>Etika Profesi (08:00 - 09:40)</td>
-          <td>Wirausaha Digital (08:00 - 09:40)</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Kecerdesan Buatan (13:50 - 16:20)</td>
-          <td>Basis Data (14:40 - 17:10)</td>
-          <td></td>
-          <td>Struktur Data (13:50 - 16:20)</td>
-        </tr>
+
+      <section
+        id="about"
+        class="py-16 sm:py-28 md:py-28 scroll-mt-20 md:scroll-mt-10"
+      >
+        <div class="container mx-auto px-4 sm:px-6">
+          <h2
+            class="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 sm:mb-16 text-center relative -mt-5"
+          >
+            <span
+              class="-ml-16 relative gradient-bg bg-clip-text text-transparent"
+            >
+              About Me
+            </span>
+          </h2>
+          <div
+            class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12"
+          >
+            <div class="lg:w-2/5 flex justify-center">
+              <div class="relative animate-float -mt-10">
+                <div
+                  class="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-neuro-dark dark:shadow-neuro-dark border-4 border-gradient-to-r from-electric-blue via-purple-glow to-pink-glow"
+                >
+                  <img
+                    src="foto.jpg"
+                    alt="Profile Photo"
+                    class="w-full h-full object-cover object-center"
+                  />
+                </div>
+                <div
+                  class="absolute inset-0 rounded-full border-4 border-cyan-glow opacity-50 animate-pulse-slow"
+                ></div>
+                <div
+                  class="absolute -top-4 -right-4 w-8 h-8 bg-green-glow rounded-full animate-pulse sparkle"
+                ></div>
+                <div
+                  class="absolute -bottom-4 -left-4 w-6 h-6 bg-pink-glow rounded-full animate-pulse sparkle"
+                  style="animation-delay: 1s"
+                ></div>
+              </div>
+            </div>
+            <div class="lg:w-3/5">
+              <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-4">
+                I'm
+                <span class="gradient-bg bg-clip-text text-transparent"
+                  >Alfin Mubarkah Tanjung</span
+                >, a Student Of Computer Science USU
+              </h3>
+              <p
+                class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed text-sm sm:text-base"
+              >
+                I specialize in building exceptional digital experiences that
+                live on the internet. With a focus on creating elegant,
+                efficient, and user-friendly applications, I bring ideas to life
+                with code.
+              </p>
+              <p
+                class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed text-sm sm:text-base"
+              >
+                As a recent graduate in web development, I've worked on various
+                projects during my studies and through freelance work—ranging
+                from simple websites to applications with complex features. I
+                enjoy combining technical skills with creative problem-solving
+                to deliver effective and engaging solutions.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                <div
+                  class="flex items-center p-3 rounded-lg bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20"
+                >
+                  <i
+                    class="fas fa-map-marker-alt text-electric-blue mr-3 text-lg"
+                  ></i>
+                  <span class="text-sm sm:text-base">Medan, Indonesia</span>
+                </div>
+                <div
+                  class="flex items-center p-3 rounded-lg bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/20"
+                >
+                  <i class="fas fa-envelope text-green-glow mr-3 text-lg"></i>
+                  <span class="text-sm sm:text-base"
+                    >alfinmubarkah@gmail.com</span
+                  >
+                </div>
+                <div
+                  class="flex items-center p-3 rounded-lg bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20"
+                >
+                  <i class="fas fa-phone text-purple-glow mr-3 text-lg"></i>
+                  <span class="text-sm sm:text-base">+62 895 0955 1617</span>
+                </div>
+                <div
+                  class="flex items-center p-3 rounded-lg bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20"
+                >
+                  <i
+                    class="fas fa-graduation-cap text-orange-glow mr-3 text-lg"
+                  ></i>
+                  <span class="text-sm sm:text-base"
+                    >Computer Science, Universitas Sumatera Utara</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="Schedule"
+        class="py-16 sm:py-20 md:py-28 md:scroll-mt-1 scroll-mt-20 bg-slate-100 dark:bg-gray-900"
+      >
+        <div class="container mx-auto px-4 sm:px-6">
+          <h2
+            class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-center"
+          >
+            <span class="relative gradient-bg bg-clip-text text-transparent">
+              My Schedule
+            </span>
+          </h2>
+          <div
+            class="overflow-x-auto rounded-xl shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-electric-blue/20"
+          >
+        <table class="min-w-full text-sm text-gray-800 dark:text-gray-200">
+          <thead class="bg-gradient-to-r from-electric-blue to-purple-glow text-white">
+          <tr>
+            <th scope="col" class="px-6 py-3 text-left font-semibold uppercase">Senin</th>
+            <th scope="col" class="px-6 py-3 text-left font-semibold uppercase">Selasa</th>
+            <th scope="col" class="px-6 py-3 text-left font-semibold uppercase">Rabu</th>
+            <th scope="col" class="px-6 py-3 text-left font-semibold uppercase">Kamis</th>
+            <th scope="col" class="px-6 py-3 text-left font-semibold uppercase">Jumat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="hover:bg-electric-blue/10 transition-all duration-200">
+            <td class="px-6 py-3 border-b border-gray-200 dark:border-gray-700">Desain Interaksi (10:30 - 12:10)</td>
+            <td class="px-6 py-3 border-b border-gray-200 dark:border-gray-700">IELTS Preparation (10:30 - 12:10)</td>
+            <td class="px-6 py-3 border-b border-gray-200 dark:border-gray-700">Pemrograman Web (08:00 - 10:30)</td>
+            <td class="px-6 py-3 border-b border-gray-200 dark:border-gray-700">Etika Profesi (08:00 - 09:40)</td>
+            <td class="px-6 py-3 border-b border-gray-200 dark:border-gray-700">Wirausaha Digital (08:00 - 09:40)</td>
+          </tr>
+
+          <tr class="hover:bg-electric-blue/10 transition-all duration-200">
+            <td class="px-6 py-3 border-b border-gray-200 dark:border-gray-700">Praktikum BasDat (13:50 - 15:30)</td>
+            <td class="px-6 py-3 border-b border-gray-200 dark:border-gray-700">Kecerdesan Buatan (13:50 - 16:20)</td>
+            <td class="px-6 py-3 border-b border-gray-200 dark:border-gray-700">Basis Data (14:40 - 17:10)</td>
+            <td class="px-6 py-3 border-b border-gray-200 dark:border-gray-700">Praktikum StrukDat (13:00 - 14:40)</td>
+            <td class="px-6 py-3 border-b border-gray-200 dark:border-gray-700">Struktur Data (13:50 - 16:20)</td>
+          </tr>
+
+          <tr class="hover:bg-electric-blue/10 transition-all duration-200">
+            <td class="px-6 py-3 border-b border-gray-200 dark:border-gray-700"></td>
+            <td class="px-6 py-3 border-b border-gray-200 dark:border-gray-700"></td>
+            <td class="px-6 py-3 border-b border-gray-200 dark:border-gray-700"></td>
+            <td class="px-6 py-3 border-b border-gray-200 dark:border-gray-700"></td>
+            <td class="px-6 py-3 border-b border-gray-200 dark:border-gray-700">Praktikum PemWeb (10:30 - 12:10)</td>
+          </tr>
+        </tbody>
       </table>
-    </section>
+    </div>
+  </div>
+</section>
+            </a>
+          </div>
+        </div>
+      </section>
 
-    <section id="contact" class="fade-in">
-      <h2>Contact Me</h2>
-      <form id="contactForm">
-        <input type="text" id="name" placeholder="Nama Anda" required />
-        <input type="email" id="email" placeholder="Email Anda" required />
-        <textarea
-          id="message"
-          rows="5"
-          placeholder="Pesan Anda"
-          required
-        ></textarea>
-        <button type="submit">Kirim</button>
-      </form>
-      <p id="formResponse"></p>
-    </section>
+      <section
+        id="intro"
+        class="py-16 sm:py-20 md:py-32 md:scroll-mt-1 scroll-mt-20"
+      >
+      <div class="container mx-auto px-4 sm:px-6">
+        <h2
+          class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-center"
+        >
+          <span class="relative gradient-bg bg-clip-text text-transparent">
+            HTML, CSS, JS, Tailwind?
+          </span>
+        </h2>
+        <div class="card-grid cols-4">
+          
+          <div
+            class="project-card rounded-xl overflow-hidden shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-electric-blue/20"
+          >
+            <div class="relative aspect-video bg-black flex items-center justify-center overflow-hidden">
+              <img
+                src="https://miro.medium.com/1*dVRNj-7iK3PJgfJIpCNr5Q.jpeg"
+                alt="HTML"
+                class="w-full h-full"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-70"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-base font-bold mb-2 text-gray-800 dark:text-white">
+                Hypertext Markup Language 
+              </h3>
+              <p
+                class="text-gray-600 dark:text-gray-400 mb-4 text-xs text-justify"
+              >
+                HTML, singkatan dari HyperText Markup Language, adalah bahasa standar yang digunakan untuk membuat struktur dasar dan konten halaman web. Fungsinya adalah untuk memberi tahu peramban (browser) cara menampilkan teks, gambar, tautan, dan elemen lainnya di sebuah halaman web, seperti kerangka dasar sebuah rumah yang menentukan tata letak. HTML menjadi fondasi untuk hampir semua situs web.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+              </div>
+            </div>
+          </div>
 
-    <footer>
-      <p>&copy; 2025 Alfin Mubarkah | @alfnmbrkh</p>
+          <div
+            class="project-card rounded-xl overflow-hidden shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-electric-blue/20"
+          >
+            <div class="relative aspect-video overflow-hidden">
+              <img
+                src="https://bikin.website/blog/wp-content/uploads/2021/09/css-adalah-300x168.png"
+                alt="Cascading Style Sheet"
+                class="w-full h-full"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-70"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-base font-bold mb-2 text-gray-800 dark:text-white">
+                Cascading Style Sheet
+              </h3>
+              <p
+                class="text-gray-600 dark:text-gray-400 mb-4 text-xs text-justify"
+              >
+                CSS, singkatan dari Cascading Style Sheets, adalah bahasa yang digunakan untuk mendeskripsikan tampilan dan format dokumen yang ditulis dalam bahasa markup seperti HTML atau XML. CSS berfungsi untuk memisahkan konten dari tampilan visualnya, memungkinkan pengembang untuk mengatur elemen seperti tata letak, warna, font, dan jarak antar elemen pada halaman web. 
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="project-card rounded-xl overflow-hidden shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-purple-glow/20"
+          >
+            <div class="relative aspect-video overflow-hidden">
+              <img
+                src="https://bairesdev.mo.cloudinary.net/blog/2023/08/What-Is-JavaScript-Used-For.jpg"
+                alt="JavaScript"
+                class="w-full h-full"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-70"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-base font-bold mb-2 text-gray-800 dark:text-white">
+                Javascript
+              </h3>
+              <p
+                class="text-gray-600 dark:text-gray-400 mb-4 text-xs text-justify"
+              >
+                JavaScript adalah bahasa pemrograman yang digunakan untuk membuat halaman web interaktif dan dinamis, bekerja bersama HTML (struktur) dan CSS (tampilan). Ini memungkinkan pengembang untuk menambahkan fitur seperti animasi, pembaruan konten, dan fungsi interaktif lainnya ke situs web. JavaScript digunakan secara luas dan menjadi bagian penting dari pengembangan web modern, bahkan dapat digunakan untuk pengembangan sisi server dan Internet of Things (IoT). 
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="project-card rounded-xl overflow-hidden shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-electric-blue/20"
+          >
+            <div class="relative aspect-video bg-black flex items-center justify-center overflow-hidden">
+              <img
+                src="https://jefrydco.id/_nuxt/img/how-tailwind-css-help-reduce-workload-by-jefrydco.833f9b8.jpg"
+                alt="Tailwind"
+                class="w-full h-full"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-70"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-base font-bold mb-2 text-gray-800 dark:text-white">
+                Tailwind
+              </h3>
+              <p
+                class="text-gray-600 dark:text-gray-400 mb-4 text-xs text-justify"
+              >
+                Tailwind adalah framework CSS utility-first untuk membangun antarmuka pengguna (UI) dengan cepat. Tidak seperti framework lain yang menyediakan komponen siap pakai (seperti Bootstrap), Tailwind memberikan banyak kelas utilitas kecil yang bisa digabungkan langsung di HTML untuk menyesuaikan tampilan secara kustom. 
+              </p>
+            </div>
+          </div>
+      </section>
+
+      <section
+        id="tutorial"
+        class="py-16 sm:py-20 md:py-32 md:scroll-mt-1 scroll-mt-20 bg-slate-100 dark:bg-gray-900"
+      >
+        <div class="container mx-auto px-4 sm:px-6">
+          <h2
+            class="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 sm:mb-16 text-center"
+          >
+            <span class="relative gradient-bg bg-clip-text text-transparent">
+              Tutorial Make A Simple Website
+            </span>
+          </h2>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+          >
+            <div
+              class="certificate-card rounded-xl overflow-hidden shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-green-glow/20"
+            >
+              <div
+                class="relative h-40 sm:h-48 flex items-center justify-center"
+              >
+                <img
+                  src="https://ruko.s3.ap-southeast-1.amazonaws.com/rumahkomunitas.com/tulisan/180319043514_your-website.jpg"
+                  alt=""
+                  class="w-full h-full object-contain p-2"
+                />
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-center text-white"></div>
+                </div>
+                <div
+                  class="absolute top-2 left-2 px-3 py-1 rounded-full bg-blue-300/70 text-white text-xs font-bold"
+                >
+                  1.
+                </div>
+              </div>
+              <div class="p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">
+                  Tentukan Tujuan Website
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-3 text-sm">
+                  Sebelum Membuat Website, kita harus tau dulu tujuan kita untuk membuat website tersebut, apakah website itu untuk profil pribadi(portofolio), untuk bisnis atau toko online, atau hanya untuk belajar web. Tujuan ini penting supaya kamu tahu struktur dan konten yang akan dibuat
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="certificate-card rounded-xl overflow-hidden shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-green-glow/20"
+            >
+              <div
+                class="relative h-40 sm:h-48 flex items-center justify-center"
+              >
+                <img
+                  src="https://images.ctfassets.net/lzny33ho1g45/1nBwzHo2cVkaJDcuwPhaeY/c825951e5d8ccb76b316e992d16f2cdc/best-code-editor.jpg"
+                  alt=""
+                  class="w-full h-full object-contain p-2"
+                />
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-center text-white"></div>
+                </div>
+                <div
+                  class="absolute top-2 left-2 px-3 py-1 rounded-full bg-blue-300/70 text-white text-xs font-bold"
+                >
+                  2
+                </div>
+              </div>
+              <div class="p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">
+                  Pilih Editor Kode HTML
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-3 text-sm">
+                  Editor kode adalah software yang digunakan untuk menulis coding website. Meskipun bisa menggunakan editor teks default seperti Notepad untuk membuat halaman HTML, aplikasi tersebut tidak memiliki fitur penting untuk menyederhanakan proses development
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="certificate-card rounded-xl overflow-hidden shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-green-glow/20"
+            >
+              <div
+                class="relative h-40 sm:h-48 flex items-center justify-center"
+              >
+                <img
+                  src="https://www.hostinger.com/id/tutorial/wp-content/uploads/sites/37/2023/10/rencana-layout-website-kasar-dalam-cara-membuat-website-dengan-html-1024x407.png"
+                  alt=""
+                  class="w-full h-full object-contain p-2"
+                />
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-center text-white"></div>
+                </div>
+                <div
+                  class="absolute top-2 left-2 px-3 py-1 rounded-full bg-blue-300/70 text-white text-xs font-bold"
+                >
+                  3
+                </div>
+              </div>
+              <div class="p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">
+                  Rencanakan Tata Letak Website
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-3 text-sm">
+                  Selanjutnya, Anda perlu membuat rencana tata letak (layout) yang matang dalam cara membuat website dengan HTML dan CSS. Sebab, hal ini akan memungkinkan Anda memvisualkan tampilan website dengan lebih baik.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="certificate-card rounded-xl overflow-hidden shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-green-glow/20"
+            >
+              <div
+                class="relative h-40 sm:h-48 flex items-center justify-center"
+              >
+                <img
+                  src="https://www.researchgate.net/publication/340563169/figure/tbl1/AS:880960795062276@1587048829722/web-page-code-in-simple-HTML-that-contains-html-head-title-body-p-and-footer-tags.png"
+                  alt=""
+                  class="w-full h-full object-contain p-2"
+                />
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-center text-white"></div>
+                </div>
+                <div
+                  class="absolute top-2 left-2 px-3 py-1 rounded-full bg-blue-300/70 text-white text-xs font-bold"
+                >
+                  4
+                </div>
+              </div>
+              <div class="p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">
+                  Mulai Tulis Kode HTML
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-3 text-sm">
+                  Setelah rencana layout dan tool siap, Anda bisa mulai menulis kode untuk memulai cara membuat website dengan HTML. Langkah-langkahnya mungkin bervariasi tergantung pada editor kode yang Anda gunakan, tapi proses dasarnya tetap sama.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="certificate-card rounded-xl overflow-hidden shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-green-glow/20"
+            >
+              <div
+                class="relative h-40 sm:h-48 flex items-center justify-center"
+              >
+                <img
+                  src="https://media.licdn.com/dms/image/v2/D4D12AQH3JOoTMgJNVw/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1693668127437?e=2147483647&v=beta&t=3DgTFtiRnftfAJnUkWuQbp5x13vfmQUmkWcwVVfI3E8"
+                  alt=""
+                  class="w-full h-full object-contain p-2"
+                />
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-center text-white"></div>
+                </div>
+                <div
+                  class="absolute top-2 left-2 px-3 py-1 rounded-full bg-blue-300/70 text-white text-xs font-bold"
+                >
+                  5
+                </div>
+              </div>
+              <div class="p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">
+                  Buat Element Tata Letak
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-3 text-sm">
+                  Tambahkan kode HTML ke dalam file index.html untuk membuat elemen-elemen dari rencana layout Anda. Tergantung pada desain website Anda, mungkin akan diperlukan beberapa elemen semantik HTML yang berbeda.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="certificate-card rounded-xl overflow-hidden shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-electric-blue/20"
+            >
+              <div class="relative h-40 sm:h-48 flex items-center justify-center">
+                <img
+                  src="https://www.hostinger.com/id/tutorial/wp-content/uploads/sites/37/2023/10/website-yang-ditulis-hanya-menggunakan-html-1024x437.png"
+                  alt=""
+                  class="w-full h-full object-contain p-2"
+                />
+                <div
+                  class="absolute top-2 left-2 px-3 py-1 rounded-full bg-blue-300/70 text-white text-xs font-bold"
+                >
+                  6
+                </div>
+              </div>
+              <div class="p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">
+                  Tambahkan Konten HTML
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-3 text-sm">
+                  Apabila layout sudah siap, mulailah mengisinya dengan konten website, seperti teks, gambar, link, atau video. Kalau konten Anda belum siap, gunakan sampel konten apa pun sebagai placeholder, kemudian Anda bisa menggantinya nanti.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="certificate-card rounded-xl overflow-hidden shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-green-glow/20"
+            >
+              <div
+                class="relative h-40 sm:h-48 flex items-center justify-center"
+              >
+                <img
+                  src="https://www.hostinger.com/id/tutorial/wp-content/uploads/sites/37/2023/10/website-dengan-layout-css-1024x412.png"
+                  alt=""
+                  class="w-full h-full object-contain p-2"
+                />
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-center text-white"></div>
+                </div>
+                <div
+                  class="absolute top-2 left-2 px-3 py-1 rounded-full bg-blue-300/70 text-white text-xs font-bold"
+                >
+                  7
+                </div>
+              </div>
+              <div class="p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">
+                  Sertakan CSS Tata Letak
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-3 text-sm">
+                  Untuk membuat layout website dua kolom, kami akan menggunakan properti flex. Properti ini berfungsi untuk mengatur elemen HTML menggunakan tempat penampung yang fleksibel sehingga bisa menyesuaikan ukuran layar pengguna.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="certificate-card rounded-xl overflow-hidden shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-green-glow/20"
+            >
+              <div
+                class="relative h-40 sm:h-48 flex items-center justify-center"
+              >
+                <img
+                  src="https://www.hostinger.com/id/tutorial/wp-content/uploads/sites/37/2023/10/membuat-website-html-dengan-layout-dan-styling-css-1024x401.png"
+                  alt=""
+                  class="w-full h-full object-contain p-2"
+                />
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-center text-white"></div>
+                </div>
+                <div
+                  class="absolute top-2 left-2 px-3 py-1 rounded-full bg-blue-300/70 text-white text-xs font-bold"
+                >
+                  8
+                </div>
+              </div>
+              <div class="p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">
+                  Sesuaikan Tampilan Website HTML
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-3 text-sm">
+                  Selain mengubah tata letak, gunakan CSS untuk menyesuaikan aspek visual lain website Anda. Misalnya, Anda bisa mengganti jenis font dan gambar latar belakang website.
+                </p>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="p&k" class="py-20 bg-slate-100 dark:bg-gray-900 scroll-mt-20">
+        <div class="container mx-auto px-4 sm:px-6">
+        <h2
+          class="text-3xl font-bold mb-10 text-center gradient-bg bg-clip-text text-transparent"
+        >
+          Pesan & Kesan
+        </h2>
+
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-10 mb-10">
+          <div
+              class="relative w-52 h-72 sm:w-56 sm:h-80 rounded-2xl overflow-hidden glass dark:glass-light shadow-neuro-light dark:shadow-neuro-dark hover:shadow-glow transition-all duration-300"
+            >
+              <img
+                src="https://konten.usu.ac.id/storage/satker/44/statis/lecturer/Dosen%20Dewi%20(1).webp"
+                alt="Image 1"
+                class="w-full h-full object-cover rounded-2xl transition-transform duration-500 hover:scale-105"
+              />
+            <div
+              class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent text-center py-2"
+            >
+              <p class="text-white font-semibold text-sm sm:text-base">
+                Dr. Dewi Sartika Br Ginting, S.Kom., M.Kom
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="w-70 h-72 sm:w-56 sm:h-80 rounded-2xl overflow-hidden glass dark:glass-light shadow-neuro-light dark:shadow-neuro-dark hover:shadow-glow transition-all duration-300"
+          >
+            <img
+              src="https://konten.usu.ac.id/storage/year/2025-01/satker/44/statis/lecturer/Nurrahmadayeni.webp"
+              alt="Image 2"
+              class="w-full h-full object-cover rounded-2xl transition-transform duration-500 hover:scale-105"
+            />
+            <div
+              class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent text-center py-2"
+            >
+              <p class="text-white font-semibold text-sm sm:text-base">
+                Nurrahmadayeni, M.Kom
+              </p>
+            </div>
+          </div>
+
+    <div class="max-w-2xl mx-auto">
+      <p
+        class="text-gray-700 dark:text-gray-300 text-base sm:text-lg text-justify leading-relaxed"
+      >
+        Untuk di 3 bulan belajar pemrograman web ini dosen yang mengajar saya hanya Ibu Dewi Sartika, mungkin tidak banyak pesan dan kesan yang saya berikan, saya merasa Ibu Dewi dapat mengajarkan materi pada Pemrograman Web ini karna saya mudah mengerti dengan materi yang di berikan. Dan juga Ibu Dewi membawakan kelas itu asik dan tidak canggung. Untuk ke 4 bulan di Semester ini saya akan diajar oleh Ibu Nurrahmadayeni, karena saya belum pernah ketemu dengan Bu Nurrahmadayeni jadi saya tidak dapat memberikan Pesan dan Kesan nya :).
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+
+      <section
+        id="contact"
+        class="py-16 sm:py-2 md:py-8 scroll-mt-20 bg-slate-100 dark:bg-gray-900"
+      >
+        <div class="container mx-auto px-4 sm:px-6">
+          <h2
+            class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-8 text-center"
+          >
+            <span class="relative gradient-bg bg-clip-text text-transparent">
+              Contact Me
+            </span>
+          </h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            <div>
+              <h3
+                class="text-xl sm:text-2xl font-bold mb-6 gradient-bg bg-clip-text text-transparent"
+              >
+                Contact Information
+              </h3>
+
+              <div class="space-y-6">
+                <div
+                  class="flex items-start p-4 rounded-lg bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20"
+                >
+                  <div
+                    class="w-12 h-12 rounded-full bg-gradient-to-r from-electric-blue to-purple-glow flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="fas fa-map-marker-alt text-white"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-base sm:text-lg font-medium mb-1">
+                      Location
+                    </h4>
+                    <p
+                      class="text-gray-600 dark:text-gray-400 text-sm sm:text-base"
+                    >
+                      Medan, Indonesia
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class="flex items-start p-4 rounded-lg bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20"
+                >
+                  <div
+                    class="w-12 h-12 rounded-full bg-gradient-to-r from-green-glow to-emerald-500 flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="fas fa-envelope text-white"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-base sm:text-lg font-medium mb-1">Email</h4>
+                    <p
+                      class="text-gray-600 dark:text-gray-400 text-sm sm:text-base"
+                    >
+                      alfinmubarkah@gmail.com
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class="flex items-start p-4 rounded-lg bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20"
+                >
+                  <div
+                    class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-glow to-pink-glow flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="fas fa-phone text-white"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-base sm:text-lg font-medium mb-1">Phone</h4>
+                    <p
+                      class="text-gray-600 dark:text-gray-400 text-sm sm:text-base"
+                    >
+                      +62 895 0955 1617
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class="flex items-start p-4 rounded-lg bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20"
+                >
+                  <div
+                    class="w-12 h-12 rounded-full bg-gradient-to-r from-orange-glow to-red-500 flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="fas fa-globe text-white"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-base sm:text-lg font-medium mb-1">
+                      Website
+                    </h4>
+                    <p
+                      class="text-gray-600 dark:text-gray-400 text-sm sm:text-base"
+                    >
+                      https://alfinmubarkah.github.io/
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3
+                class="text-xl sm:text-2xl font-bold mb-6 gradient-bg bg-clip-text text-transparent"
+              >
+                Send Me a Message
+              </h3>
+              <form id="emailForm" class="space-y-6">
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-input w-full px-4 py-3 bg-transparent border-2 border-gray-300 dark:border-gray-700 rounded-lg focus:border-electric-blue focus:outline-none focus:shadow-glow transition-all duration-300 text-gray-800 dark:text-gray-200"
+                    placeholder=" "
+                    required
+                  />
+                  <label
+                    for="name"
+                    class="floating-label absolute left-4 top-3 text-gray-500 dark:text-gray-400"
+                    >Your Name</label
+                  >
+                </div>
+
+                <div class="relative">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-input w-full px-4 py-3 bg-transparent border-2 border-gray-300 dark:border-gray-700 rounded-lg focus:border-electric-blue focus:outline-none focus:shadow-glow transition-all duration-300 text-gray-800 dark:text-gray-200"
+                    placeholder=" "
+                    required
+                  />
+                  <label
+                    for="email"
+                    class="floating-label absolute left-4 top-3 text-gray-500 dark:text-gray-400"
+                    >Your Email</label
+                  >
+                </div>
+
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    class="form-input w-full px-4 py-3 bg-transparent border-2 border-gray-300 dark:border-gray-700 rounded-lg focus:border-electric-blue focus:outline-none focus:shadow-glow transition-all duration-300 text-gray-800 dark:text-gray-200"
+                    placeholder=" "
+                    required
+                  />
+                  <label
+                    for="subject"
+                    class="floating-label absolute left-4 top-3 text-gray-500 dark:text-gray-400"
+                    >Subject</label
+                  >
+                </div>
+
+                <div class="relative">
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    class="form-input w-full px-4 py-3 bg-transparent border-2 border-gray-300 dark:border-gray-700 rounded-lg focus:border-electric-blue focus:outline-none focus:shadow-glow transition-all duration-300 text-gray-800 dark:text-gray-200"
+                    placeholder=" "
+                    required
+                  ></textarea>
+                  <label
+                    for="message"
+                    class="floating-label absolute left-4 top-3 text-gray-500 dark:text-gray-400"
+                    >Your Message</label
+                  >
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-electric-blue via-purple-glow to-pink-glow text-white font-medium hover:shadow-glow-strong transform hover:scale-105 transition-all duration-300"
+                >
+                  <i class="fas fa-paper-plane mr-2"></i> Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer
+        class="py-8 bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white"
+      >
+        <div class="container mx-auto px-4 sm:px-6">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+            </div>
+
+            <div class="flex space-x-6 mb-4 md:mb-0">
+              <a
+                href="https://github.com/alfnmbrkh"
+                class="w-12 h-12 rounded-full bg-gradient-to-r from-gray-700 to-gray-900 flex items-center justify-center text-white hover:from-electric-blue hover:to-purple-glow hover:shadow-glow transform hover:scale-110 transition-all duration-300"
+              >
+                <i class="fab fa-github text-xl"></i>
+              </a>
+              <a
+                href="https://wa.me/089509551617"
+                class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center text-white hover:from-electric-blue hover:to-purple-glow hover:shadow-glow transform hover:scale-110 transition-all duration-300"
+              >
+                <i class="fab fa-whatsapp text-xl"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/alfnmbrkh"
+                class="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center text-white hover:from-electric-blue hover:to-purple-glow hover:shadow-glow transform hover:scale-110 transition-all duration-300"
+              >
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+              <a
+                href="https://www.tiktok.com/@alfnmbrkh"
+                class="w-12 h-12 rounded-full bg-gradient-to-r from-black to-gray-800 flex items-center justify-center text-white hover:from-electric-blue hover:to-purple-glow hover:shadow-glow transform hover:scale-110 transition-all duration-300"
+              >
+                <i class="fab fa-tiktok text-xl"></i>
+              </a>
+            </div>
+
+            <div class="text-gray-400 text-sm">
+            </div>
+          </div>
+        </div>
+      </footer>
+      </div>
+    </main>
+    <footer
+      class="text-center py-6 mt-15 border-t border-gray-200 dark:border-gray-700"
+    >
+      <p class="text-sm text-gray-600 dark:text-gray-400">
+        © 2025 Alfin Mubarkah Tanjung. All rights reserved.
+      </p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
